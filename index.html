@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">Simple Digital Library</h1>
+    </div>
+    <div class="button-container">
+        <button class="bookBTN">Add Book</button>
+    </div>
+    <div class="form-container">
+        <form class="formPopup">
+            <p class="formHeader">Add New Book</p>
+            <input class="formInput" type="text" placeholder="Title" id="titleInput" required>
+            <input class='formInput' type='text' placeholder='Author' id='authorInput' required>
+            <input class='formInput' type='number' placeholder='Pages' id='pagesInput' max='100000' required>
+            <div class="readCheckbox">
+                <label for="hasRead">Done Reading?</label>
+                <input type="checkbox" id="hasRead" name="hasRead">
+            </div>
+            <button class="btnAddBook" form="formContainer" type="submit" id="btnAddBook">Add</button>
+            <button class="btnCloseForm" id="btnCloseForm">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>
