@@ -1,6 +1,5 @@
-/*  Function loops through array and displays each book on display card.
-New book button allows user to input details that are fed into constructor.
- another to edit each book.*/
+// GO THROUGH CODE, FIGURE OUT WHAT ISNT WORKING AND FIX/REPLACE. KEEP WHAT WORKS
+
 
 const library = [];
 const bookContainer = document.querySelector('.bookContainer')
@@ -10,7 +9,7 @@ const bookContainer = document.querySelector('.bookContainer')
 function bookMaker(title, author, pages, read) {
     this.title = title
     this.author = author
-    this.pages = pages
+    this.pages = pages+' pages'
     if(read) {
         this.read = 'Read'
     } else {
@@ -49,14 +48,14 @@ function libraryDisplay() {
         deleteBook.innerText = 'Delete'
         book.appendChild(deleteBook)
     })
-    const deleteButton = document.querySelector('.deleteBook')
+    const deleteButton = document.querySelectorAll('.deleteBook')
     deleteButton.forEach((delBtn) => {
         delBtn.addEventListener('click', function(e) {
             const currentIndex = Number(delBtn.parentNode.getAttribute('data-index'))
             removeBook(currentIndex)
         })
     })
-    const readToggle = document.querySelector('.readStatus')
+    const readToggle = document.querySelectorAll('.readStatus')
     readToggle.forEach((readTgl) => {
         readTgl.addEventListener('click', function(e) {
             const currentStatus = (readTgl.previousSibling.innerText)
@@ -64,6 +63,15 @@ function libraryDisplay() {
             library[currIndex].toggleReadStatus(currentStatus, currIndex)
         })
     })
+}
+
+bookMaker.prototype.toggleReadStatus = function(currentStatus, index) {
+    if(currentStatus == 'Read') {
+        library[index].read = 'Not Read'
+    } else {
+        library[index].read = 'Read'
+    }
+    libraryDisplay()
 }
 
 // refreshes display to avoid multiple library instances
@@ -101,29 +109,29 @@ function clearAllRequiredFields() {
 }
 
 function openForm() {
-    document.querySelector('form-container').style.display = 'block'
-    document.querySelector('formPopup').reset()
+    document.querySelector('.form-container').style.display = 'block'
+    document.querySelector('.formPopup').reset()
     clearAllRequiredFields()
 }
 
 function closeForm() {
-    document.getElementById('formContainer').style.display = 'none'
+    document.querySelector('.form-container').style.display = 'none'
 }
 
-const btnNewBook = document.getElementById('bookBTN')
-btnNewBook.addEventListener('click', openForm)
+const btnNewBook = document.querySelector('.bookBTN')
+btnNewBook.addEventListener('click', openForm) 
 
 // book form functionality
 
-const addBook = document.getElementById('btnAddBook')
+const bookAdd = document.getElementById('btnAddBook')
 const cancel = document.getElementById('btnCloseForm')
 cancel.addEventListener('click', closeForm)
-addBook.addEventListener('click', function(e) {
+bookAdd.addEventListener('click', function(e) {
     const bookTitle = document.getElementById('titleInput')
     const bookAuthor = document.getElementById('AuthorInput')
     const bookPages = document.getElementById('pagesInput')
     const bookRead = document.getElementById('hasRead')
-    if(!bookTitle.checkValidity()) {
+    /*if(!bookTitle.checkValidity()) {
         addRequiredField(bookTitle)
     } else if(bookTitle.checkValidity()) {
         removeRequiredField(bookTitle)
@@ -137,14 +145,13 @@ addBook.addEventListener('click', function(e) {
         addRequiredField(bookPages)
     } else if(bookPages.checkValidity()) {
         removeRequiredField(bookPages)
-    }
-    if(bookTitle.checkValidity() && bookAuthor.checkValidity() && bookPages.checkValidity()) {
-        clearAllRequiredFields()
+    }*/
+    /*if(bookTitle.checkValidity() && bookAuthor.checkValidity() && bookPages.checkValidity()) {
+        clearAllRequiredFields()*/
         const bookN = new bookMaker(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.checked)
         addBook(bookN)
         libraryDisplay()
         closeForm()
-    }
-})
+    })
 // if chain to determine if each form field recieved an input before sending
 // to the book constructor and adding the output to the library

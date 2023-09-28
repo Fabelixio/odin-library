@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    color: burlywood;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.bookContainer {
+    display: grid;
+    grid-area: library;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    border: solid black 1px;
+}
+
+.bookCard {
+    display: block;
+    border: thin solid gray;
+    border-radius:10px;
+    background-color: #D3D3D3;
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    font-size: 25px;
+    font-family: 'Lato', sans-serif;
+    padding-top: 35px;
+}
+
+.title {
+    padding-top: 10px;
+}
+
+.author {
+    padding-top: 10px;
+}
+
+.pages {
+    padding-top: 10px;
+}
+
+.read {
+    padding-top: 10px;
+}
+
+.form-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.formPopup {
+    background-color: burlywood;
+    margin: 10% auto;
+    padding: 20px;
+    border: 2px solid #888;
+    border-radius: 5px;
+    width: 400px;
+    height: 450px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+}
+
+.formHeader {
+    font-size: 30px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.formInput {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #888;
+    height: 40px;
+    width: 90%;
+    font-size: 20px;
+}
+
+.btnCloseForm {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    padding: 15px;
+    width: 100px;
+    border-radius: 20px;
+}
+
+.btnAddBook {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    padding: 15px;
+    margin: 20px 15px 0px 0px;
+    width: 100px;
+    border-radius: 20px;
+}
+
+.requiredField {
+    border: 2px solid red;
+}
