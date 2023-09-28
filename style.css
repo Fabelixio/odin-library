@@ -2,20 +2,25 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: burlywood;
+}
 
 .header {
-    color: burlywood;
+    color: teal;
+    box-shadow:  ;
     justify-content: center;
     align-items: center;
     display: flex;
     margin: 0%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Young Serif', serif;
+    text-decoration: underline;
 }
 
 .bookContainer {
     display: grid;
     grid-area: library;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 20px;
     padding-top: 20px;
@@ -24,14 +29,15 @@
 
 .bookCard {
     display: block;
-    border: thin solid gray;
+    border: thin solid black;
     border-radius:10px;
-    background-color: burlywood;
+    background-color: #a16337;
     text-align: center;
+    box-shadow: 4px 5px ;
     width: 400px;
     height: 300px;
     font-size: 25px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'IM Fell Great Primer SC', serif;
     padding-top: 35px;
 }
 
@@ -125,6 +131,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  font-family: 'IM Fell Great Primer SC', serif;
 }
 
 .bookBTN:hover, .readStatus:hover, .deleteBook:hover {
@@ -144,7 +151,7 @@
 }
 
 .readStatus, .deleteBook {
-    background-color: #fbeee0;
+    background-color: burlywood;
     border-radius: 5px;
     box-shadow: #422800;
     cursor: pointer;
