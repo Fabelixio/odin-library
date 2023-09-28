@@ -118,6 +118,8 @@ function closeForm() {
     document.querySelector('.form-container').style.display = 'none'
 }
 
+//button opens book add form
+
 const btnNewBook = document.querySelector('.bookBTN')
 btnNewBook.addEventListener('click', openForm) 
 
@@ -128,10 +130,10 @@ const cancel = document.getElementById('btnCloseForm')
 cancel.addEventListener('click', closeForm)
 bookAdd.addEventListener('click', function(e) {
     const bookTitle = document.getElementById('titleInput')
-    const bookAuthor = document.getElementById('AuthorInput')
+    const bookAuthor = document.getElementById('authorInput')
     const bookPages = document.getElementById('pagesInput')
     const bookRead = document.getElementById('hasRead')
-    /*if(!bookTitle.checkValidity()) {
+    if(!bookTitle.checkValidity()) {
         addRequiredField(bookTitle)
     } else if(bookTitle.checkValidity()) {
         removeRequiredField(bookTitle)
@@ -145,13 +147,14 @@ bookAdd.addEventListener('click', function(e) {
         addRequiredField(bookPages)
     } else if(bookPages.checkValidity()) {
         removeRequiredField(bookPages)
-    }*/
-    /*if(bookTitle.checkValidity() && bookAuthor.checkValidity() && bookPages.checkValidity()) {
-        clearAllRequiredFields()*/
+    }
+    if(bookTitle.checkValidity() && bookAuthor.checkValidity() && bookPages.checkValidity()) {
+        clearAllRequiredFields()
         const bookN = new bookMaker(bookTitle.value, bookAuthor.value, bookPages.value, bookRead.checked)
         addBook(bookN)
         libraryDisplay()
         closeForm()
-    })
+    }
+})
 // if chain to determine if each form field recieved an input before sending
 // to the book constructor and adding the output to the library

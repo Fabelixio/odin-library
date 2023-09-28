@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 .header {
     color: burlywood;
     justify-content: center;
@@ -19,14 +20,13 @@
     gap: 20px;
     padding-top: 20px;
     padding-left: 20px;
-    border: solid black 1px;
 }
 
 .bookCard {
     display: block;
     border: thin solid gray;
     border-radius:10px;
-    background-color: #D3D3D3;
+    background-color: burlywood;
     text-align: center;
     width: 400px;
     height: 300px;
@@ -106,4 +106,54 @@
 
 .requiredField {
     border: 2px solid red;
+}
+
+.bookBTN {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.bookBTN:hover, .readStatus:hover, .deleteBook:hover {
+  background-color: #fff;
+}
+
+.bookBTN:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .bookBTN {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+.readStatus, .deleteBook {
+    background-color: #fbeee0;
+    border-radius: 5px;
+    box-shadow: #422800;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5 18px;
+    font-weight: 550;
+}
+
+.readStatus:active, .deleteBook:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(1px 1px);
 }
